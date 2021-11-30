@@ -1,0 +1,519 @@
+<html>
+<head>
+<meta charset="utf-8"><!--converting machine readable code-->
+<meta content="IE-edge" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta content="width=device-width, intial-scale=1.0" name="viewport">
+<title>Shopping Website</title>
+<link rel="stylesheet" href="dist/css/bootstrap.css">
+<link rel="stylesheet" href="style.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+
+<!--fav-icon---------------->
+
+	<!--style----->
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  
+</style>
+	
+</head>
+<body>
+	<div class="container-fluid">
+	<nav> 
+		<!--social-links-and-phone-number----------------->
+ <div class="social-call" style="background-color: #0b9d8a;">
+	 <!--social-links--->
+	 <div class="social">
+		 <a href="#"><i class="fab fa-facebook-f"></i></a>
+		 <a href="#"><i class="fab fa-twitter"></i></a>
+		 <a href="#"><i class="fab fa-youtube"></i></a>
+		 <a href="#"><i class="fab fa-instagram"></i></a>
+	 </div>
+	 <!--phone-number------>
+	 <div class="phone">
+		 <span>Call: +123456789</span>
+	 </div>
+ </div>
+ <!--menu-bar----------------------------------------->
+ <div class="navigation">
+	 <!--logo------------>
+	 <div>
+		<a href="#" class="logo"><img src="images/logo.png"></a>
+		<div><strong style="color: #0b9d8a;font-size:20px;float:left"> PlantLUX</strong></div>
+		
+	 </div>
+	 
+	 
+	
+	 <!--menu-icon------------->
+	 
+	 <!--right-menu----------->
+	 <div class="right-menu">
+		
+			<a href="javascript:void(0);" class="user" id="logicon" style="visibility: visible;">
+			LOGIN
+			</a>
+		
+		 <a href="javascript:void(0);" class="search">
+			 <i class="fas fa-search"></i>
+		 </a>
+		 <a style="visibility:hidden" role="button" id="dropdownMenuLinkk" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+			 <i class="far fa-user"></i>
+			 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLinkk">
+				<li><a class="dropdown-item" href="#"><h5 id="ead">email address</h5></a></li>
+				<li><a class="dropdown-item" href="/myorder">My orders</a></li>
+				<li><hr class="dropdown-divider"></li>
+				<li><a class="dropdown-item" href="#"><h5>Log Out</h5></a></li>
+			  </ul>
+		 </a>
+		
+		 <a href="cart.html">
+			 <i class="fas fa-shopping-cart">
+				 <span class="num-cart-product">0</span>
+			 </i>
+		 </a>
+		 
+	 </div>
+	 </div>
+ </nav>
+
+</div>
+
+ <div class="search-bar">
+    
+	<!--search-input------->
+	<div class="search-input">
+	<input type="text" placeholder="Search For Product" name="search" />
+	<!--cancel-btn--->
+	<a href="javascript:void(0);" class="search-cancel">
+		<i class="fas fa-times"></i>
+	</a>
+
+</div>
+</div>
+<div class="form">
+	<!--login---------->
+	<div class="login-form">
+		<!--cancel-btn---------------->
+		<a href="javascript:void(0);" class="form-cancel">
+			<i class="fas fa-times"></i>
+		</a>
+		<strong>Log In</strong>
+		<!--inputs-->
+		<form id="login">
+		
+			<input type="email" id="loginemail" name="email" placeholder="Example@gmail.com" required/>
+			<label id="uemail" style="color:red; visibility: hidden;font-size: small;">Invalid email address</label>
+			<input type="password" id="loginpassword" name="password" placeholder="Password" required/>
+			<label id="upassword" style="color:red; visibility: hidden;font-size: small;">Invalid Password</label>
+			
+			
+			<input type="submit" value="Login" id="nb"/>
+			<div id="logwarn" style="visibility: hidden;" class="alert alert-danger d-flex align-items-center alert-dismissible fade show" role="alert" role="alert">
+				<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+				<div>
+				  Login failed..PLease try again.
+				</div>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			  </div>	
+			<!--<input class="logb" type="submit" value="Log In"/>-->
+		</form>
+		<!--forget-and-sign-up-btn-->
+		<div class="form-btns">
+			<a href="#" class="forget">Forget Your Password?</a>
+			<a href="javascript:void(0);" class="sign-up-btn">Create Account</a>
+		</div>
+	</div>
+		<!--Sign-up---------->
+		<div class="sign-up-form">
+			<!--cancel-btn---------------->
+		<a href="javascript:void(0);" class="form-cancel">
+			<i class="fas fa-times"></i>
+		</a>
+			<strong>Sign Up</strong>
+			<!--inputs-->
+			<form onsubmit="return sign()" method="POST" action="/signup"> 
+				<input id="signtext" type="text" name="fullname" placeholder="Full Name" required/>
+				<label id="ustext" style="color:red; visibility: hidden;font-size: small;">Invalid Name</label>
+				<input type="email" id="signemail" name="sigemail" placeholder="Example@gmail.com" required/>
+				<label id="usemail" style="color:red; visibility: hidden;font-size: small;">Invalid email address</label>
+				<input id="signpass" type="password" name="sigpassword" placeholder="Password" required/>
+				<label id="uspass" style="color:red; visibility: hidden;font-size: small;">Invalid password</label>
+				<input type="submit" value="Signup"/>
+			</form>
+			<!--forget-and-sign-up-btn-->
+			<div class="form-btns">
+				<a href="javascript:void(0);" class="already-account">
+					Already Have Account?</a>
+
+			</div>
+
+		</div>
+</div>
+
+
+
+<nav class="navbar navbar-expand navbar-light bg-light justify-content-center" id="mainnav">
+           
+	
+		<center><ul class="navbar-nav">
+			<li class="nav-item active"><a href="#" class="nav-link">HOME</a></li>
+			
+			  <li class="nav-item dropdown">
+				<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+					
+					<a class="btn  btn-light" href="/all/Plants" role="button">PLANTS</a>
+					<button class="btn btn-light dropdown-toggle" id="navbarDropdown22" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="caret"></span></button>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown22">
+							<a class="dropdown-item" href="plant.html">Flowering Plants</a>
+							<a class="dropdown-item" href="#">Vegetable Plants</a>
+							<a class="dropdown-item" href="#">Herbal Plants</a>
+							<a class="dropdown-item" href="#">Fancy and other Plants</a>
+							
+						  </div>
+					
+				  </div>
+			  </li>
+			 
+			  <li class="nav-item dropdown">
+				
+				<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+					<button type="button" class="btn btn btn-light">SEEDS</button>
+					<button class="btn btn-light dropdown-toggle" id="navbarDropdown2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="caret"></span></button>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+							<a class="dropdown-item" href="#">Flowering Seeds</a>
+				  			<a class="dropdown-item" href="#">Vegetable Seeds</a>
+				  			<a class="dropdown-item" href="#">Herb Seeds</a>
+				  			<a class="dropdown-item" href="#">Organic Seeds</a>
+				  			<a class="dropdown-item" href="#">Forestry and other Seeds</a>
+							
+						</div>
+				  </div>
+			  </li>
+			  <li class="nav-item dropdown">
+				
+				<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+					<button type="button" class="btn btn btn-light">Tools</button>
+					<button class="btn btn-light dropdown-toggle" id="navbarDropdown3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="caret"></span></button>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+							<a class="dropdown-item" href="#">Garden Hand Tools</a>
+				  			<a class="dropdown-item" href="#">Garden Forks</a>
+				  			<a class="dropdown-item" href="#">Yards and Rakes</a>
+				  			<a class="dropdown-item" href="#">Spades</a>
+				  			<a class="dropdown-item" href="#">Clearing Tools</a>
+							
+						</div>
+				  </div>
+			  </li>
+			  <li class="nav-item dropdown">
+				
+				<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+					<button type="button" class="btn btn btn-light">FERTILIZER</button>
+					<button class="btn btn-light dropdown-toggle" id="navbarDropdown4" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="caret"></span></button>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+							<a class="dropdown-item" href="#">Organic</a>
+				  			<a class="dropdown-item" href="#">Non Organic</a>
+				  			
+							
+						</div>
+				  </div>
+			  </li>
+			<li class="nav-item"><a href="#" class="nav-link">DISCUSSION</a></li>
+
+
+		</ul></center>	
+</nav>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+	<symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+	  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+	</symbol>
+	<symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+	  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+	</symbol>
+	<symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+	  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+	</symbol>
+  </svg>
+  
+<div id="loginalert" style="visibility: hidden;" class="alert alert-success d-flex align-items-center alert-dismissible fade show" role="alert">
+	<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+	
+	  You have succesfully logged in..
+	
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+
+<center><div style="height:400px;width:900px" id="mobilecol">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="height:100px">
+	<div class="carousel-inner">
+	  <div class="carousel-item active">
+		<img class="d-block w-100" src="images/3.jpg" alt="First slide">
+	  </div>
+	  <div class="carousel-item">
+		<img class="d-block w-100" src="images/4.jpg" alt="Second slide">
+	  </div>
+	  <div class="carousel-item">
+		<img class="d-block w-100" src="images/2.jpg" alt="Third slide">
+	  </div>
+	</div>
+  </div>
+</div></center>
+
+  <div class="" style="width:500;height:80;margin-left:60px;margin-top:35px;color:rgb(133, 8, 8); font-size:20px;">
+	  <strong> FEATURED CATEGORIES </strong>
+	  
+  </div>
+  <div class="container" id="f">
+	  <div class="row">
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/rose2.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Flower plants</p>
+		  </div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/cherry.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Fruit plants</p>
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/vege2.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Vegetable plants</p>
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/seeds2.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Seeds</p>
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/bonsai2.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Fancy Plants</p>
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/nets.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Nets</p>
+		</div>
+
+	  </div>
+  </div>
+  <!-----nav-->
+  
+  <nav class="navbar navbar-dark bg-dark justify-content-center" style="margin:10px;height:80px">
+	<!-- Navbar content -->
+	<ul class="nav">
+		<li class="nav-item">
+		  <a class="nav-link" href="/sellerlogin">Login as Seller</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#">Help</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#">More information</a>
+		</li>
+	
+	  </ul>
+  </nav>
+  
+
+
+</body>
+  <!--using FontAwesome--------------->
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="jquery.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ 
+  
+  <script src="dist/js/bootstrap.js"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+	
+	    
+  
+</script>
+<script>
+	function sign()
+	{
+		var uname=document.getElementById("signtext").value;
+	   var uemail=document.getElementById("signemail").value;
+	   var upass=document.getElementById("signpass").value;
+	  
+
+	   var regex1= new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
+	   var regex2= new RegExp("^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%@&?]).*$");
+	   var regex3=new RegExp("^[a-zA-Z]+ [a-zA-Z]+$");
+	   let wrong=0;
+	   if(!regex3.test(uname))
+	   {	
+		   signtext.style.border="solid 3px red";
+		   document.getElementById('ustext').style.visibility='visible';
+		   wrong+=1;
+		   
+	   }
+	  
+	   if(!regex1.test(uemail))
+	   {	
+		   signemail.style.border="solid 3px red";
+		   document.getElementById('usemail').style.visibility='visible';
+		   wrong++;
+		   
+	   }
+	   
+	   
+	   
+	   if(wrong==0)
+	   {
+		   return true;
+		   
+	   }
+	   else
+	   {
+		   return false;
+	   }
+	  
+	}
+	function f()
+	{
+		
+			alert(sessionStorage.getItem(""));
+
+
+	}
+	function loginvalidate()
+	{ 
+       var uname=document.getElementById("loginemail").value;
+	   var upass=document.getElementById("loginpassword").value;
+	   var regex1= new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
+	   var regex2= new RegExp("^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%@&?]).*$");
+	   var wrong=true;
+	   if(!regex1.test(uname))
+	   {	
+		   loginemail.style.border="solid 3px red";
+		   document.getElementById('uemail').style.visibility='visible';
+		   wrong=false;
+	   }
+	   else
+	   {
+		   wrong=true;
+	   }
+	   if(!regex2.test(upass))
+	   {	
+		   loginpassword.style.border="solid 3px red";
+		   document.getElementById('upassword').style.visibility='visible';
+		   wrong=false;
+	   }
+	   else
+	   {
+		   wrong=true;
+	   }
+	   if(wrong)
+	   {
+		   return true;
+		   
+	   }
+	   else
+	   {
+		   return false;
+	   }
+
+
+	}
+	//------------------------
+	
+	
+	
+
+</script>
+<script>
+	
+	$(document).ready(function(){
+		$(document).on('click','.search',function(){
+        $('.search-bar').addClass('search-bar-active')
+    });
+ 
+    $(document).on('click','.search-cancel',function(){
+        $('.search-bar').removeClass('search-bar-active')
+    });
+	$(document).on('click','.user,.already-account',function(){
+        $('.form').addClass('login-active').removeClass('sign-up-active')
+    });
+ 
+    $(document).on('click','.sign-up-btn',function(){
+        $('.form').addClass('sign-up-active').removeClass('login-active')
+    });
+ 
+    $(document).on('click','.form-cancel',function(){
+        $('.form').removeClass('login-active').removeClass('sign-up-active')
+    });
+	if(sessionStorage.getItem("email")!=undefined)
+		{	
+			$("#logicon").attr("style","visibility:hidden");
+			$("#dropdownMenuLinkk").attr("style","visibility:visible");
+
+		}
+		$("#nb").click(function(e){
+			e.preventDefault();
+  		$.post("/checklogin",
+  		{
+    		email: loginemail.value,
+    		password: loginpassword.value
+  		},
+  		function(data, status){
+    	
+		const myobj=jQuery.parseJSON(data);
+		if(myobj.flag==1)
+		{
+			
+			$("#loginalert").attr("style","visibility:visible");
+			$("#logicon").attr("style","visibility:hidden");
+			$('.form').removeClass('login-active');
+			
+		
+  // Store
+  		sessionStorage.setItem("username", myobj.username);
+		  sessionStorage.setItem("userid", myobj.custom_id);
+		  sessionStorage.setItem("email", myobj.email);
+		  sessionStorage.setItem("phone_no", myobj.phone_no);
+		  sessionStorage.setItem("address", myobj.address);
+		  
+		  $("#dropdownMenuLinkk").attr("style","visibility:visible");
+		  $("#ead").text(myobj.email);	
+		
+  // Retr
+  // Retrieve
+  		
+		} 
+	else (myobj.flag==2 || myobj.flag==3)
+	{ 
+		
+		$("#logwarn").attr("style","visibility:visible");
+		myobj.flag=0;
+	}
+		
+	
+	
+	});
+	});
+
+	});
+	
+	
+</script>
+  </html>

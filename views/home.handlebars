@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><!--converting machine readable code-->
+<meta content="IE-edge" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta content="width=device-width, intial-scale=1.0" name="viewport">
+<title>Shopping Website</title>
+<link rel="stylesheet" href="dist/css/bootstrap.css">
+<link rel="stylesheet" href="style.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+
+
+<!--fav-icon---------------->
+
+	<!--style----->
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  
+</style>
+	
+</head>
+<body>
+	<div class="container-fluid">
+	<nav> 
+		<!--social-links-and-phone-number----------------->
+ <div class="social-call" style="background-color: #0b9d8a;">
+	 <!--social-links--->
+	 <div class="social">
+		 <a href="#"><i class="fab fa-facebook-f"></i></a>
+		 <a href="#"><i class="fab fa-twitter"></i></a>
+		 <a href="#"><i class="fab fa-youtube"></i></a>
+		 <a href="#"><i class="fab fa-instagram"></i></a>
+	 </div>
+	 <!--phone-number------>
+	 <div class="phone">
+		 <span>Call: +123456789</span>
+	 </div>
+ </div>
+ <!--menu-bar----------------------------------------->
+ <div class="navigation">
+	 <!--logo------------>
+	 <div>
+		<a href="#" class="logo"><img src="images/logo.png"></a>
+		<div><strong style="color: #0b9d8a;font-size:20px;float:left"> PlantLUX</strong></div>
+		
+	 </div>
+	 
+	 
+	
+	 <!--menu-icon------------->
+	 
+	 <!--right-menu----------->
+	 <div class="right-menu">
+		<a href="javascript:void(0);" class="user">
+			LOGIN
+		</a>
+		 <a href="javascript:void(0);" class="search">
+			 <i class="fas fa-search"></i>
+		 </a>
+		 <a href="javascript:void(0);" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true"">
+			 <i class="far fa-user"></i>
+			 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<li><a class="dropdown-item" href="#">{{#if message}}<h4>{{message}}</h4>{{/if}}</a></li>
+				<li><a class="dropdown-item" href="#">My orders</a></li>
+				<li><hr class="dropdown-divider"></li>
+				<li><a class="dropdown-item" href="#"><h5>Log Out</h5></a></li>
+			  </ul>
+		 </a>
+		
+		 <a href="cart.html">
+			 <i class="fas fa-shopping-cart">
+				 <span class="num-cart-product">0</span>
+			 </i>
+		 </a>
+		 
+	 </div>
+	 </div>
+ </nav>
+
+</div>
+
+ <div class="search-bar">
+    
+	<!--search-input------->
+	<div class="search-input">
+	<input type="text" placeholder="Search For Product" name="search" />
+	<!--cancel-btn--->
+	<a href="javascript:void(0);" class="search-cancel">
+		<i class="fas fa-times"></i>
+	</a>
+
+</div>
+</div>
+<div class="form">
+	<!--login---------->
+	<div class="login-form">
+		<!--cancel-btn---------------->
+		<a href="javascript:void(0);" class="form-cancel">
+			<i class="fas fa-times"></i>
+		</a>
+		<strong>Log In</strong>
+		<!--inputs-->
+		<form id="login" method="post" action="/checklogin">
+		
+			<input type="email" id="loginemail" name="email" placeholder="Example@gmail.com" required/>
+			<label id="uemail" style="color:red; visibility: hidden;font-size: small;">Invalid email address</label>
+			<input type="password" id="loginpassword" name="password" placeholder="Password" required/>
+			<label id="upassword" style="color:red; visibility: hidden;font-size: small;">Invalid Password</label>
+			
+				
+			<input class="logb" type="submit" value="Log In"/>
+		</form>
+		<!--forget-and-sign-up-btn-->
+		<div class="form-btns">
+			<a href="#" class="forget">Forget Your Password?</a>
+			<a href="javascript:void(0);" class="sign-up-btn">Create Account</a>
+		</div>
+	</div>
+		<!--Sign-up---------->
+		<div class="sign-up-form">
+			<!--cancel-btn---------------->
+		<a href="javascript:void(0);" class="form-cancel">
+			<i class="fas fa-times"></i>
+		</a>
+			<strong>Sign Up</strong>
+			<!--inputs-->
+			<form onsubmit="return sign()" method="POST" action="/signup"> 
+				<input id="signtext" type="text" name="fullname" placeholder="Full Name" required/>
+				<label id="ustext" style="color:red; visibility: hidden;font-size: small;">Invalid Name</label>
+				<input type="email" id="signemail" name="sigemail" placeholder="Example@gmail.com" required/>
+				<label id="usemail" style="color:red; visibility: hidden;font-size: small;">Invalid email address</label>
+				<input id="signpass" type="password" name="sigpassword" placeholder="Password" required/>
+				<label id="uspass" style="color:red; visibility: hidden;font-size: small;">Invalid password</label>
+				<input type="submit" value="Signup"/>
+			</form>
+			<!--forget-and-sign-up-btn-->
+			<div class="form-btns">
+				<a href="javascript:void(0);" class="already-account">
+					Already Have Account?</a>
+
+			</div>
+
+		</div>
+</div>
+
+
+
+<nav class="navbar navbar-expand navbar-light bg-light justify-content-center">
+           
+	
+		<center><ul class="navbar-nav">
+			<li class="nav-item active"><a href="#" class="nav-link">HOME</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  PLANTS
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				  <a class="dropdown-item" href="#">Flowering Plants</a>
+				  <a class="dropdown-item" href="#">Vegetable Plants</a>
+				  <a class="dropdown-item" href="#">Herbal Plants</a>
+				  <a class="dropdown-item" href="#">Fancy and other Plants</a>
+				  
+				</div>
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  SEEDS
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarropdown">
+				  <a class="dropdown-item" href="#">Flowering Seeds</a>
+				  <a class="dropdown-item" href="#">Vegetable Seeds</a>
+				  <a class="dropdown-item" href="#">Herb Seeds</a>
+				  <a class="dropdown-item" href="#">Organic Seeds</a>
+				  <a class="dropdown-item" href="#">Forestry and other Seeds</a>
+
+				  
+				</div>
+			  </li>
+			<li class="nav-item"><a href="#" class="nav-link">TOOLS</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">FERTILIZER</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">DISCUSSION</a></li>
+
+
+		</ul></center>	
+</nav>
+{{#if message}}
+<h4 class="alert alert-danger mt-4">{{message}}</h4>
+{{/if}}
+
+<center><div style="height:400px;width:900px" id="mobilecol">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="height:100px">
+	<div class="carousel-inner">
+	  <div class="carousel-item active">
+		<img class="d-block w-100" src="images/3.jpg" alt="First slide">
+	  </div>
+	  <div class="carousel-item">
+		<img class="d-block w-100" src="images/4.jpg" alt="Second slide">
+	  </div>
+	  <div class="carousel-item">
+		<img class="d-block w-100" src="images/2.jpg" alt="Third slide">
+	  </div>
+	</div>
+  </div>
+</div></center>
+
+  <div class="" style="width:500;height:80;margin-left:60px;margin-top:35px;color:rgb(133, 8, 8); font-size:20px;">
+	  <strong> FEATURED CATEGORIES </strong>
+	  
+  </div>
+  <div class="container" id="f">
+	  <div class="row">
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/rose2.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Flower plants</p>
+		  </div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/cherry.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Fruit plants</p>
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/vege2.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Vegetable plants</p>
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/seeds2.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Seeds</p>
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/bonsai2.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Fancy Plants</p>
+		</div>
+		<div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+			
+			<a href="#"><img src="images/nets.jpg"  class="mx-auto d-block img-fluid" alt=""></a>
+			<p class="text-center">Nets</p>
+		</div>
+
+	  </div>
+  </div>
+  <!-----nav-->
+  
+  <nav class="navbar navbar-dark bg-dark justify-content-center" style="margin:10px;height:80px">
+	<!-- Navbar content -->
+	<ul class="nav">
+		<li class="nav-item">
+		  <a class="nav-link" href="#">Login as Seller</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#">Help</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#">More information</a>
+		</li>
+	
+	  </ul>
+  </nav>
+  
+
+
+</body>
+  <!--using FontAwesome--------------->
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="jquery.js"></script>
+  <script src="dist/js/bootstrap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+	
+	    $(document).on('click','.search',function(){
+        $('.search-bar').addClass('search-bar-active')
+    });
+ 
+    $(document).on('click','.search-cancel',function(){
+        $('.search-bar').removeClass('search-bar-active')
+    });
+	$(document).on('click','.user,.already-account',function(){
+        $('.form').addClass('login-active').removeClass('sign-up-active')
+    });
+ 
+    $(document).on('click','.sign-up-btn',function(){
+        $('.form').addClass('sign-up-active').removeClass('login-active')
+    });
+ 
+    $(document).on('click','.form-cancel',function(){
+        $('.form').removeClass('login-active').removeClass('sign-up-active')
+    });
+  
+</script>
+<script>
+	function sign()
+	{
+		var uname=document.getElementById("signtext").value;
+	   var uemail=document.getElementById("signemail").value;
+	   var upass=document.getElementById("signpass").value;
+	   alert(uname);
+	   alert(uemail);
+	   alert(upass);
+
+	   var regex1= new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
+	   var regex2= new RegExp("^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%@&?]).*$");
+	   var regex3=new RegExp("^[a-zA-Z]+ [a-zA-Z]+$");
+	   let wrong=0;
+	   if(!regex3.test(uname))
+	   {	
+		   signtext.style.border="solid 3px red";
+		   document.getElementById('ustext').style.visibility='visible';
+		   wrong+=1;
+		   alert("inc un");
+	   }
+	  
+	   if(!regex1.test(uemail))
+	   {	
+		   signemail.style.border="solid 3px red";
+		   document.getElementById('usemail').style.visibility='visible';
+		   wrong++;
+		   alert("inc ue");
+	   }
+	   
+	   if(!regex2.test(upass))
+	   {	
+		   signpass.style.border="solid 3px red";
+		   document.getElementById('uspass').style.visibility='visible';
+		   alert("inc np");
+		   wrong++;
+	   }
+	   
+	   if(wrong==0)
+	   {
+		   return true;
+		   
+	   }
+	   else
+	   {
+		   return false;
+	   }
+	  
+	}
+	
+	
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script>
+  // compile the template
+  var template = Handlebars.compile("Handlebars {{message}}");
+  // execute the compiled template and print the output to the console
+ alert(template({ message: "" }));
+ var x=template({ message: "" });
+ alert(x);
+</script>
+
+  </html>

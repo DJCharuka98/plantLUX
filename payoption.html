@@ -1,0 +1,115 @@
+<html>
+<head>
+<meta charset="utf-8"><!--converting machine readable code-->
+<meta content="IE-edge" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta content="width=device-width, intial-scale=1.0" name="viewport">
+<title>Shopping Website</title>
+<link rel="stylesheet" href="dist/css/bootstrap.css">
+<link rel="stylesheet" href="style.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+<!--fav-icon---------------->
+
+	<!--style----->
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  
+</style>
+	
+</head>
+<body>
+	<div class="container-fluid">
+<nav>
+ <div class="navigation">
+	 <!--logo------------>
+	 <div>
+		<a href="#" class="logo"><img src="images/logo.png"></a>
+		<div><strong style="color: #0b9d8a;font-size:20px;float:left"> PlantLUX</strong></div>
+		
+	 </div>
+    </nav>
+	 <!--menu-icon------------->
+	 <div class="container" style="margin-top: 40px">
+
+		<div class="jumbotron jumbotron-fluid">
+			<div class="row">
+				<div class="col-9" style="float:right">Total amount:</div>
+				<div class="col-3" style="float:left"><p id="total" style="float:right">Rs.1100.00</p></div>
+		
+			</div>
+			<hr class="my-4">
+		   
+			   <h5 class="">Select Payment Method</h5>
+			   <div class="container" style="margin-right: 20px;margin-left: 20px;"></div>
+			   <a id="credit" href="#"><div class="row" style="margin-top: 40px;height:80px;box-shadow: 5px 10px 20px rgb(214, 211, 211) inset;border-radius: 10px ;">
+			   <div class="col-12" style="margin-top: 20px">
+				   
+					   <i class="far fa-credit-card fa-2x" style="color: #ec0808;margin-right: 10px;"></i><strong style="color: #141313;margin-right: 50px;">  Credit/Debit Card  </strong> <i class="fab fa-cc-visa" style="margin-right: 10px"></i><i class="fab fa-cc-mastercard"></i>
+				   
+	   
+			   </div>
+			   </div>
+				</a>
+				<div class="container" style="margin-right: 20px;margin-left: 20px;"></div>
+				<a id="cod" href=""><div class="row" style="margin-top: 40px;height:80px;box-shadow: 5px 10px 20px rgb(214, 211, 211) inset;border-radius: 10px ;">
+				   <div class="col-12" style="margin-top: 20px">
+					   
+						   <i class="far fa-money-bill-alt fa-2x" style="color: #ec0808;margin-right: 10px;"></i><strong style="color: #141313;margin-right: 50px;"> Cash On Delivery  </strong>
+					   
+		   
+				   </div>
+				   </div>
+					</a>
+				   </div>
+	   
+			
+		 </div>
+	   </div>
+	 
+
+
+
+</body>
+  <!--using FontAwesome--------------->
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="jquery.js"></script>
+  <script src="dist/js/bootstrap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		const myobj=jQuery.parseJSON(sessionStorage.getItem("item1"));
+		var total=parseInt(myobj.sfee)+(parseInt(myobj.purchase)*parseInt(myobj.item_price));
+		$("#total").text("Rs. "+total+".00");
+
+		$("#credit").click(function(){
+			myobj.method="card";
+			sessionStorage.setItem("item1",JSON.stringify(myobj));
+			
+			window.location.replace("/card");
+		});
+		$("#cod").click(function(){
+			myobj.method="COD";
+			sessionStorage.setItem("item1",JSON.stringify(myobj));
+			
+			//window.location.replace("/");
+			$.post("/order",jQuery.parseJSON(sessionStorage.getItem("item1"))
+  			,
+  			function(data, status){
+
+			});
+
+		});
+
+		});
+	
+</script>
+
+</html>

@@ -1,0 +1,245 @@
+<html>
+<head>
+<meta charset="utf-8"><!--converting machine readable code-->
+<meta content="IE-edge" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta content="width=device-width, intial-scale=1.0" name="viewport">
+<title>Shopping Website</title>
+<link rel="stylesheet" href="dist/css/bootstrap.css">
+<link rel="stylesheet" href="style.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+
+
+<!--fav-icon---------------->
+
+	<!--style----->
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  
+</style>
+	
+</head>
+<body>
+	<div class="container-fluid">
+	<nav> 
+		<!--social-links-and-phone-number----------------->
+        <div class="social-call" style="background-color: #0b9d8a;">
+	 <!--social-links--->
+	 <div class="social">
+		 <a href="#"><i class="fab fa-facebook-f"></i></a>
+		 <a href="#"><i class="fab fa-twitter"></i></a>
+		 <a href="#"><i class="fab fa-youtube"></i></a>
+		 <a href="#"><i class="fab fa-instagram"></i></a>
+	 </div>
+	 <!--phone-number------>
+	 <div class="phone">
+		 <span>Call: +123456789</span>
+	 </div>
+ </div>
+ </nav>
+</div>
+<div class="container-fluid">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="" width="40" height="34" class="d-inline-block align-text-top">
+            PlantLUX
+          </a>
+          
+          
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">PlantLUX</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              
+            <div>
+                <hr>
+                <a href="/sellerorders"> Orders</a>
+            </div>
+            <div>
+                <hr>
+                <a href="/shiporder"> Shipper orders</a>
+            </div>
+            <div>
+                <hr>
+                <a href=""> Cancelled orders</a>
+            </div>
+            <div>
+                <hr>
+                <a href=""> Payments and Withdrawal</a>
+                
+            </div>
+
+            </div>
+          </div>
+
+        </div>
+      </nav>
+</div>
+<div class="container-fluid">
+    <nav> 
+        <div class="navigation" style="float:left">
+            <p><i class="fa fa-industry" aria-hidden="true"></i>   Seller Dashboard</p>
+        </div>
+	
+ <div class="navigation" style="float: right;">
+	
+	 
+	 <div class="right-menu" style="color: honeydew;">
+		 <a href="javascript:void(0);" class="search">
+			 <i class="fas fa-home"></i>
+		 </a>
+         <a href="javascript:void(0);" class="search">
+            <i class="fas fa-user"></i>
+        </a>
+		
+	 </div>
+	 </div>
+ </nav>
+ 
+</div>
+<br>
+<hr>
+ <!--menu-bar----------------------------------------->
+ <div class="container">
+   <div class="row">
+     <div class="col-6 col-md-3" style="margin-top:5px;">
+      <div class="card" style="width: 13rem; height:10rem;">
+        <div class="card-body">
+          <h5 class="card-title">Orders</h5>
+          <div  style="margin-top:35px;">
+            <h6 class="card-subtitle mb-2 text-muted" style="margin-top:15px;">Card subtitle</h6>
+           </div>
+          
+        </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3"  style="margin-top:5px;">
+      <div class="card" style="width: 13rem;height:10rem;">
+        <div class="card-body">
+          <h5 class="card-title">Shipped Orders</h5>
+          <div  style="margin-top:25px;">
+            <h6 class="card-subtitle mb-2 text-muted" style="margin-top:15px;">Card subtitle</h6>
+           </div>
+           <div class="progress" style="margin-top:20px;">
+            <div class=" progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25%" aria-valuemin="0" aria-valuemax="100">25%</div>
+            
+          </div>
+          <p>of orders</p>
+         
+        </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3"  style="margin-top:5px;">
+      <div class="card" style="width:13rem;height:10rem;">
+        <div class="card-body">
+          <h5 class="card-title">Delivered Orders</h5>
+          <div  style="margin-top:25px;">
+          <h6 class="card-subtitle mb-2 text-muted" style="margin-top:15px;">Card subtitle</h6>
+         </div>
+         <div class="progress" style="margin-top:20px;">
+          <div class=" progress-bar bg-success" role="progressbar" style="width:55%;" aria-valuenow="55%" aria-valuemin="0" aria-valuemax="100">55%</div>
+          
+        </div>
+        <p>of shipped orders</p>
+        
+        </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-3"  style="margin-top:5px;">
+      <div class="card" style="width:13rem;height:10rem;">
+        <div class="card-body">
+          <h5 class="card-title">Sales</h5>
+          <div  style="margin-top:35px;">
+            <h6 class="card-title mb-2 text-muted" style="margin-top:15px;">Card subtitle</h6>
+           </div>
+        
+        </div>
+      </div>
+     </div>
+   </div>
+ </div>
+ <!----------------------------->
+ <div class="container" style="margin-top:20px;">
+     <div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Recieved Orders
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+                         {{#if result}}
+    {{#each result}}
+      <div class="card" style="margin-top:10px">
+        <div class="card-header">
+          item name: {{this.item_name}}
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{{{this.image}}}" style="width:100px;height:100px" alt="">
+                    <h6>Order Id:{{this.order_id}}</h6>
+                </div>
+                <div class="col-6">
+                    
+                    <h6 style="color:rgb(19, 17, 17)"> Rs.{{this.price}}.00</h6>
+                    <h6>Item Id:{{this.item_id}}</h6>
+                    <h6>Purchased Qty:{{this.quantity}}</h6>
+                    <h6>Shipping address:{{this.customer_address}}</h6>
+                </div>
+                <div class="col-3">
+                    
+                  <a class="btn btn-outline-info" href="/ship/{{{this.order_id}}}"><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Confirm Shipment</a>
+                    
+                </div>
+            </div>
+            
+          </blockquote>
+        </div>
+      </div>
+      {{/each}}
+      {{/if}}
+        
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+ </div>
+ 
+
+
+
+</body>
+  <!--using FontAwesome--------------->
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="jquery.js"></script>
+  <script src="dist/js/bootstrap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+	
+	
+  
+</script>
+  </html>

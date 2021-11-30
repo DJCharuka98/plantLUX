@@ -1,0 +1,1 @@
+define(['jquery'],function($){'use strict';return function(target){$.widget('mage.menu',target.menu,{_create:function(){$(this.element).data('uiMenu',this);this._super();}});target.menu=$.mage.menu;return target;};});
